@@ -19,7 +19,7 @@ In short:
 
 import numpy as np
 
-def levenshtein(a,b) :
+def levenshtein(a,b,ratio=False) :
 	if type(a) != type('') :
 		raise TypeError('First argument is not a string!')
 	if type(b) != type('') :
@@ -45,4 +45,7 @@ def levenshtein(a,b) :
 			substitution = lev[i-1,j-1] + (1 if a[i-1]!= b[j-1] else 0)
 			lev[i,j] = min(insertion,deletion,substitution)
 
-	return lev[n,m]
+	if ratio :
+		return (n+m-lev[n,m])/(n+m)
+	else :
+		return lev[n,m]
