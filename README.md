@@ -12,6 +12,7 @@ To understand this more intuitively, it helps to visualize it with the following
 
 
 |   |   | Y | E | L | L | O | W |
+ ___ ___ ___ ___ ___ ___ ___ ___
 |   | **0** | 1 | 2 | 3 | 4 | 5 | 6 |
 | H | 1 | **1** | 2 | 3 | 4 | 5 | 6 |
 | E | 2 | 2 | **1** | 2 | 3 | 4 | 5 |
@@ -39,7 +40,8 @@ A recursive implementation without the table is possible, but very inefficient (
 5. Fill the rest of the matrix by taking the minimum of :
 	1. lev(i-1,j) + 1
 	2. lev(i,j=1) + 1
-	3. lev(i-1,j) + (1 if a[i-1] != b[j-1])
+	3. lev(i-1,j) + (1 if a[i-1] != b[j-1])  
+
 	**Note**: we have to subtract by 1 when accessing the chars in `a` and `b` because the matrix is bigger. Don't let that confuse you.
 6. Return `lev[n,m]`.
 
