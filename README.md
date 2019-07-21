@@ -55,7 +55,7 @@ A more useful metric is the Levenshtein *ratio*, which can give you a percent di
 
 
 |   |   | T | A | B | L | E |
-|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|
 |   | **0** | 1 | 2 | 3 | 4 | 5 |
 | **T** | 1 | **0** | 1 | 2 | 3 | 4 |
 | **A** | 2 | 1 | **0** | 1 | 2 | 3 |
@@ -66,7 +66,7 @@ A more useful metric is the Levenshtein *ratio*, which can give you a percent di
 *Zero substitutions*.
 
 |   |   | B | I | L | L |
-|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|
 |   | **0** | 1 | 2 | 3 | 4 |
 | **G** | 1 | **1** | 2 | 3 | 4 |
 | **I** | 2 | 2 | **1** | 2 | 3 |
