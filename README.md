@@ -12,13 +12,13 @@ To understand this more intuitively, it helps to visualize it with the following
 
 
 |   |   | Y | E | L | L | O | W |
- ___ ___ ___ ___ ___ ___ ___ ___
+|---|---|---|---|---|---|---|---|
 |   | **0** | 1 | 2 | 3 | 4 | 5 | 6 |
-| H | 1 | **1** | 2 | 3 | 4 | 5 | 6 |
-| E | 2 | 2 | **1** | 2 | 3 | 4 | 5 |
-| L | 3 | 3 | 2 | **1** | 2 | 3 | 4 |
-| L | 4 | 4 | 3 | 2 | **1** | 2 | 3 |
-| O | 5 | 5 | 4 | 3 | 2 | **1** | **2** |
+| **H** | 1 | **1** | 2 | 3 | 4 | 5 | 6 |
+| **E** | 2 | 2 | **1** | 2 | 3 | 4 | 5 |
+| **L** | 3 | 3 | 2 | **1** | 2 | 3 | 4 |
+| **L** | 4 | 4 | 3 | 2 | **1** | 2 | 3 |
+| **O** | 5 | 5 | 4 | 3 | 2 | **1** | **2** |
 
 The highlited path represents a possible sequence of edits to turn 'hello' into 'yellow'. Along the path, when an edit has been made, the number increases by 1. A diagonal step *with an increasing number* represents a substitution `(i-1,j-1) -> (i,j)`. This happens when `a[i] != b[j]` (as shown in the subscript under 1 in the equation). Otherwise, a diagonal step with no change in number means no edit is made.
 
