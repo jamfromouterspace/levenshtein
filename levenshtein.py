@@ -2,7 +2,7 @@
 Jamiel Rahi
 GPL 2019
 
-A quick implementation of the Levenshtein distance algorithm.
+A simple implementation of the Levenshtein distance algorithm.
 
 In short: 
 * We're comparing strings a and b 
@@ -13,13 +13,13 @@ In short:
 	else lev(i,j) = min of  
 						lev(i-1,j) + 1, 
 						lev(i,j-1) + 1, 
-						lev(i-1,j-1) + (1 if a[i]!= b[j])
+						lev(i-1,j-1) + (1 if a[i-1] != b[j-1])
 * lev(n,m) is the levenshtein distance           
 '''
 
 import numpy as np
 
-def levenshtein(a,b,ratio=False) :
+def levenshtein(a,b,ratio=False,print_matrix=False) :
 	if type(a) != type('') :
 		raise TypeError('First argument is not a string!')
 	if type(b) != type('') :
@@ -44,6 +44,9 @@ def levenshtein(a,b,ratio=False) :
 			deletion = lev[i,j-1] + 1
 			substitution = lev[i-1,j-1] + (1 if a[i-1]!= b[j-1] else 0)
 			lev[i,j] = min(insertion,deletion,substitution)
+
+	if print_matrix :
+		print(lev)
 
 	if ratio :
 		return (n+m-lev[n,m])/(n+m)
