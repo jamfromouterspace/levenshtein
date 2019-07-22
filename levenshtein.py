@@ -19,7 +19,11 @@ In short:
 
 import numpy as np
 
-def levenshtein(a,b,ratio=False,print_matrix=False) :
+# ratio returns the levenshtein ratio instead of levenshtein distance
+# print_matrix prints the matrix
+# lowercase compares the strings as lowercase
+
+def levenshtein(a,b,ratio=False,print_matrix=False,lowercase=False) :
 	if type(a) != type('') :
 		raise TypeError('First argument is not a string!')
 	if type(b) != type('') :
@@ -28,6 +32,9 @@ def levenshtein(a,b,ratio=False,print_matrix=False) :
 		return len(b)
 	if b == '' :
 		return len(a)
+	if lowercase :
+		a = a.lower()
+		b = b.lower()
 
 	n = len(a)
 	m = len(b)
