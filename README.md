@@ -38,9 +38,9 @@ A recursive implementation without the table is possible, but very inefficient (
 3. Construct an `(n+1,m+1)` matrix `lev`. Many resources will tell you to construct an `(n,m)` matrix, but as you can see from the table it actually needs to be one bigger in each dimension.
 4. Fill the zeroth row with numbers 0 to `m` and fill the zeroth column with numbers 0 to `n`
 5. Fill the rest of the matrix by taking the minimum of :
-	1. lev(i-1,j) + 1
-	2. lev(i,j=1) + 1
-	3. lev(i-1,j) + (1 if a[i-1] != b[j-1])  
+	1. `lev(i-1,j) + 1`
+	2. `lev(i,j=1) + 1`
+	3. `lev(i-1,j) + (1 if a[i-1] != b[j-1])`
 
 	**Note**: we have to subtract by 1 when accessing the chars in `a` and `b` because the matrix is bigger. Don't let that confuse you.
 6. Return `lev[n,m]`.
